@@ -13,7 +13,8 @@ var App = React.createClass({
       var data = json_data;
       if (this.isMounted()) {
         this.setState({
-          results: data.results
+          results: data.results,
+          columns: data.outputProperties
         });
       }
     }.bind(this));
@@ -21,7 +22,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <Table data={this.state.results} />
+        <Table data={this.state} />
       </div>
       );
   }
