@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Table from "./components/Table";
 
 var App = React.createClass({
   getInitialState: function() {
@@ -17,22 +18,12 @@ var App = React.createClass({
       }
     }.bind(this));
   },
-  getTable: function() {
-    var resultsData = this.state.results;
-    if(resultsData[0] != null){
-      var tableData = resultsData.map(function(value) {
-        console.log('value', value.productpadding_link_prices);
-        return value
-      });
-    }
-    return tableData;
-  },
   render: function() {
     return (
       <div>
-        {this.getTable()}
+        <Table data={this.state.results} />
       </div>
-    );
+      );
   }
 });
 
