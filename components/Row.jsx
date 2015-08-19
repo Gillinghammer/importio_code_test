@@ -4,12 +4,9 @@ export default class Row extends React.Component {
   render() {
     var columnHeaders = this.props.headerData;
     var first_column = columnHeaders[0];
-    console.log(this.props.rowData);
     var row = this.props.rowData
     if(this.props.rowData != null){
       var tableData = columnHeaders.map(function(column, i){
-        console.log("Column: ", column.name + " " + column.type);
-        console.log("rowData with column key", row[column.name]);
         switch(column.type) {
           case "CURRENCY":
           return (
