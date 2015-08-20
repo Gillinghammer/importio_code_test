@@ -18,7 +18,7 @@ export default class Row extends React.Component {
           case "IMAGE":
           return (
             <td key={i} >
-            <img src={row[column.name]} />
+            <img src={row[column.name]} className="img-rounded img-responsive" />
             </td>
             )
           break;
@@ -39,7 +39,7 @@ export default class Row extends React.Component {
       });
     }
     return (
-      <tr key={Math.random()}>
+      <tr key={Math.random()} role="row" className={this.props.rowIndex % 2 === 0 ? "even" : "odd" }>
       {tableData}
       </tr>
       )

@@ -8,14 +8,15 @@ export default class Table extends React.Component {
     var columns = this.props.data.columns;
     if(resultsData[0] != null){
       var tableRows = resultsData.map(function(value, index) {
-        return <Row headerData={columns} rowData={value} key={Math.random()} />;
+        return <Row headerData={columns} rowData={value} key={Math.random()} rowIndex={index} />;
       });
     }
-    // console.log(tableRows);
     return (
-      <table>
-        <tbody>
+      <table className="table table-striped">
+        <thead>
           <TableHeader headerData={this.props.data.columns} key={Math.random()} />
+        </thead>
+        <tbody>
           {tableRows}
         </tbody>
       </table>
